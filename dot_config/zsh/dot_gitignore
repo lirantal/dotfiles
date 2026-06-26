@@ -1,0 +1,5 @@
+# Local/private shell config.
+env.local.zsh
+
+# Local backups created during shell config edits.
+*.backup-*

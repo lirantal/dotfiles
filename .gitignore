@@ -1,0 +1,7 @@
+.DS_Store
+*.swp
+*.tmp
+
+# Keep local/private shell state and edit backups out of the repo.
+dot_config/zsh/env.local.zsh
+dot_config/zsh/*.backup-*

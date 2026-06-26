@@ -1,0 +1,123 @@
+format = """
+[](#B4BEFE)\
+$username\
+[](fg:#F5C2E7 bg:#B4BEFE)\
+$directory\
+$git_branch\
+$git_status\
+${custom.nodejs_separator_from_git}\
+${custom.nodejs_separator_from_directory}\
+$nodejs\
+${custom.package_manager}\
+$rust\
+\r
+[](#89B4FA)\
+$time\
+$status\
+[ ](#89B4FA)\
+"""
+
+command_timeout = 10000
+
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+# You can also replace your username with a neat symbol like  to save some space
+[username]
+show_always = true
+style_user = "bg:#B4BEFE fg:#11111B"
+style_root = "bg:#B4BEFE fg:#11111B"
+format = '[$user ]($style)'
+
+[directory]
+style = "bg:#F5C2E7 fg:#11111B"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = "  "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important  " = "  "
+
+[git_branch]
+symbol = ""
+style = "bg:#F9E2AF fg:#11111B"
+format = '[](fg:#F9E2AF bg:#F5C2E7)[[ $symbol $branch ](bg:#F9E2AF fg:#11111B)]($style)'
+
+[git_status]
+style = "bg:#F9E2AF fg:#11111B"
+format = '([[ $all_status$ahead_behind ](bg:#F9E2AF fg:#11111B)]($style))'
+
+[nodejs]
+symbol = ""
+#style = "bg:#86BBD8"
+#format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+
+style = "bg:#A6E3A1 fg:#11111B"
+format = '[[ $symbol ($version) ](bg:#A6E3A1 fg:#11111B)]($style)'
+
+[custom.nodejs_separator_from_git]
+command = "git rev-parse --is-inside-work-tree >/dev/null 2>&1 && printf ''"
+style = "fg:#A6E3A1 bg:#F9E2AF"
+format = '[$output]($style)'
+detect_extensions = ["js", "mjs", "cjs", "ts", "mts", "cts"]
+detect_files = [
+  "package.json",
+  ".node-version",
+  ".nvmrc",
+]
+detect_folders = ["node_modules"]
+
+[custom.nodejs_separator_from_directory]
+command = "! git rev-parse --is-inside-work-tree >/dev/null 2>&1 && printf ''"
+style = "fg:#A6E3A1 bg:#F5C2E7"
+format = '[$output]($style)'
+detect_extensions = ["js", "mjs", "cjs", "ts", "mts", "cts"]
+detect_files = [
+  "package.json",
+  ".node-version",
+  ".nvmrc",
+]
+detect_folders = ["node_modules"]
+
+[custom.package_manager]
+command = "node /Users/lirantal/.config/starship/package-manager.js"
+style = "bg:#94E2D5 fg:#11111B"
+format = '[](fg:#94E2D5 bg:#A6E3A1)[ $output ]($style)[](#94E2D5)'
+detect_extensions = ["js", "mjs", "cjs", "ts", "mts", "cts"]
+detect_files = [
+  "package.json",
+  ".node-version",
+  ".nvmrc",
+  "pnpm-lock.yaml",
+  "package-lock.json",
+  "npm-shrinkwrap.json",
+]
+detect_folders = ["node_modules"]
+
+[rust]
+symbol = ""
+style = "bg:#FAB387 fg:#11111B"
+format = '[](fg:#FAB387 bg:#A6E3A1)[[ $symbol ($version) ](bg:#FAB387 fg:#11111B)]($style)[](#FAB387)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#89B4FA fg:#11111B"
+format = '[[ $time ](bg:#89B4FA fg:#11111B)]($style)'
+
+[status]
+disabled = false
+style = "bg:#89B4FA fg:#11111B"
+success_symbol = "✓"
+symbol = "✗"
+format = '[[$symbol$maybe_int ](bg:#89B4FA fg:#11111B)]($style)'

@@ -1,0 +1,21 @@
+# Dotfiles and shell configuration.
+brew "chezmoi"
+brew "starship"
+brew "atuin"
+brew "zoxide"
+brew "eza"
+brew "bat"
+brew "fzf"
+brew "ripgrep"
+brew "tree"
+brew "fnm"
+brew "pnpm"
+brew "pyenv"
+brew "openjdk@17"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+brew "zsh-completions"
+
+# Terminal and fonts.
+cask "ghostty"
+cask "font-fira-code-nerd-font"

@@ -1,5 +1,9 @@
 # Dotfiles and shell configuration.
 brew "chezmoi"
+brew "git"
+brew "gh"
+brew "gnupg"
+brew "pinentry-mac"
 brew "starship"
 brew "atuin"
 brew "zoxide"
@@ -19,3 +23,4 @@ brew "zsh-completions"
 # Terminal and fonts.
 cask "ghostty"
 cask "font-fira-code-nerd-font"
+cask "finicky"

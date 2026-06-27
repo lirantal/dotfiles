@@ -7,13 +7,19 @@ Personal terminal setup managed by [chezmoi](https://www.chezmoi.io/).
 This repo currently manages:
 
 - zsh loader and modular config under `~/.config/zsh`
+- Git config and global ignore rules
+- GPG agent config for commit signing
+- npm config
 - Starship prompt under `~/.config/starship.toml` and `~/.config/starship/`
 - Ghostty config under `~/.config/ghostty/config`
+- Finicky browser routing config
+- gh-cp aliases
 - Homebrew package list for the terminal stack
 
 It intentionally does not track local/private files such as:
 
 - `~/.config/zsh/env.local.zsh`
+- GitHub CLI auth hosts, SSH keys, GPG keys, and npm auth tokens
 - shell history, Atuin history, zoxide databases, caches, or generated backups
 - Ghostty generated files under `~/.config/ghostty/auto/`
 

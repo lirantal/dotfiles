@@ -40,6 +40,7 @@ export default {
 	"https://snyk.highspot.com/*",
 	"https://claude.ai/*",
 	"https://auth.openai.com/*",
+	"https://github.com/enterprises/snyk/*"
       ],
       browser: "Google Chrome",
     },

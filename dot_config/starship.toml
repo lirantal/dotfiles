@@ -5,6 +5,8 @@ $username\
 $directory\
 $git_branch\
 $git_status\
+${custom.git_closer_when_no_node}\
+${custom.directory_closer_when_last}\
 ${custom.nodejs_separator_from_git}\
 ${custom.nodejs_separator_from_directory}\
 $nodejs\
@@ -56,6 +58,18 @@ format = '[](fg:#F9E2AF bg:#F5C2E7)[[ $symbol $branch ](bg:#F9E2AF fg:#11111B
 [git_status]
 style = "bg:#F9E2AF fg:#11111B"
 format = '([[ $all_status$ahead_behind ](bg:#F9E2AF fg:#11111B)]($style))'
+
+[custom.git_closer_when_no_node]
+command = "node /Users/lirantal/.config/starship/final-segment-closer.js git"
+when = true
+style = "fg:#F9E2AF"
+format = '[$output]($style)'
+
+[custom.directory_closer_when_last]
+command = "node /Users/lirantal/.config/starship/final-segment-closer.js directory"
+when = true
+style = "fg:#F5C2E7"
+format = '[$output]($style)'
 
 [nodejs]
 symbol = ""

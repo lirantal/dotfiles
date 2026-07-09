@@ -9,6 +9,7 @@ This repo currently manages:
 - zsh loader and modular config under `~/.config/zsh`
 - Git config and global ignore rules
 - GPG agent config for commit signing
+- Husky user init for Git hooks that need the `fnm` Node toolchain
 - npm config
 - Starship prompt under `~/.config/starship.toml` and `~/.config/starship/`
 - Ghostty config under `~/.config/ghostty/config`
@@ -48,6 +49,13 @@ Install missing packages and apply the dotfiles:
 ```sh
 ~/.local/share/chezmoi/scripts/bootstrap-macos.sh
 ```
+
+The bootstrap installs Node.js 24 with `fnm` and makes it the default. The
+tracked Husky init loads that `fnm` Node before Git hooks run, so Homebrew
+`pnpm` does not fall back to an incompatible Homebrew Node runtime.
+
+For signed commits, import your private GPG key separately and add the exported
+public key to GitHub. Do not commit GPG secret keys to this repo.
 
 Optional npm wrapper used by the zsh `npm` alias:
 

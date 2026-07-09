@@ -12,10 +12,10 @@ fi
 HOMEBREW_BUNDLE_NO_UPGRADE=1 brew bundle install --file "$SOURCE_DIR/Brewfile"
 
 if command -v fnm >/dev/null 2>&1; then
-  fnm install 24
-  fnm default 24
+  fnm install 26.5.0
+  fnm default 26.5.0
   eval "$(fnm env --shell bash --log-level quiet)"
-  fnm use --silent-if-unchanged 24
+  fnm use --silent-if-unchanged 26.5.0
 fi
 
 chezmoi apply

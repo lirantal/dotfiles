@@ -4,7 +4,7 @@
 if command -v fnm >/dev/null 2>&1; then
   eval "$(fnm env --shell bash --log-level quiet)"
 
-  if fnm use --silent-if-unchanged 24 >/dev/null 2>&1; then
+  if fnm use --silent-if-unchanged 26.5.0 >/dev/null 2>&1; then
     :
   else
     fnm use --silent-if-unchanged default >/dev/null 2>&1 || true

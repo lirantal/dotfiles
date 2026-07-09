@@ -50,7 +50,7 @@ Install missing packages and apply the dotfiles:
 ~/.local/share/chezmoi/scripts/bootstrap-macos.sh
 ```
 
-The bootstrap installs Node.js 24 with `fnm` and makes it the default. The
+The bootstrap installs Node.js 26.5.0 with `fnm` and makes it the default. The
 tracked Husky init loads that `fnm` Node before Git hooks run, so Homebrew
 `pnpm` does not fall back to an incompatible Homebrew Node runtime.
 

@@ -15,6 +15,7 @@ This repo currently manages:
 - Ghostty config under `~/.config/ghostty/config`
 - Finicky browser routing config
 - gh-cp aliases
+- APM manifests (`~/.apm/apm.yml`, `config.json`, and `apm.lock.yaml`)
 - Homebrew package list for the terminal stack
 - portable Codex preferences, enabled plugins, custom skills, and custom pets
 
@@ -24,6 +25,7 @@ It intentionally does not track local/private files such as:
 - GitHub CLI auth hosts, SSH keys, GPG keys, and npm auth tokens
 - shell history, Atuin history, zoxide databases, caches, or generated backups
 - Ghostty generated files under `~/.config/ghostty/auto/`
+- APM's generated module installation under `~/.apm/apm_modules/`
 - Codex credentials, conversations, attachments, generated content, caches,
   worktrees, installed plugin caches, and local database state
 

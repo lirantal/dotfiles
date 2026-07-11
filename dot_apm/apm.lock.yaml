@@ -1,0 +1,86 @@
+lockfile_version: '1'
+generated_at: '2026-06-27T19:00:46.621591+00:00'
+apm_version: 0.22.0
+dependencies:
+- repo_url: lirantal/agent-plugin-guppi-sound-pack
+  name: guppi-sound-pack
+  host: github.com
+  resolved_commit: 60547e7c7a3918c4503150e70488cf791463af66
+  version: 1.1.0
+  package_type: apm_package
+  deployed_files:
+  - .codex/hooks/agent-plugin-guppi-sound-pack/guppi_player.py
+  deployed_file_hashes:
+    .codex/hooks/agent-plugin-guppi-sound-pack/guppi_player.py: sha256:fd2bb816302037e77c5416c45821f7ced2098254548ecf31699561a9e7de799a
+  content_hash: sha256:83ec1beb0a2599db8889182965d9d099f621f6bc5f4b32d42d5bddb791d2dabb
+  declared_license: CC-BY-NC-4.0
+- repo_url: lirantal/skills
+  name: skills
+  host: github.com
+  resolved_commit: 441025bc6f16550c202e3100aa500053468a55dc
+  version: unknown
+  package_type: skill_bundle
+  deployed_files:
+  - .agents/skills/codex-chat-organizer
+  - .agents/skills/codex-chat-organizer/SKILL.md
+  - .agents/skills/codex-chat-organizer/agents/openai.yaml
+  - .agents/skills/codex-chat-organizer/scripts/apply-move-plan.mjs
+  - .agents/skills/codex-chat-organizer/scripts/launch-chat-organizer.sh
+  - .agents/skills/codex-chat-organizer/scripts/run-move-helper.sh
+  - .agents/skills/codex-chat-organizer/scripts/test-fixture.mjs
+  - .agents/skills/codex-session-blogger
+  - .agents/skills/codex-session-blogger/SKILL.md
+  - .agents/skills/codex-session-blogger/agents/openai.yaml
+  - .agents/skills/gh-bulk-repo-edit
+  - .agents/skills/gh-bulk-repo-edit/SKILL.md
+  - .agents/skills/gh-bulk-repo-edit/references/api-recipes.md
+  - .agents/skills/gh-bulk-repo-edit/references/script-template.sh
+  - .agents/skills/gh-repo-init-context
+  - .agents/skills/gh-repo-init-context/SKILL.md
+  - .agents/skills/gh-repo-init-context/agents/openai.yaml
+  - .agents/skills/gh-repo-init-context/references/AGENTS.template.md
+  - .agents/skills/gh-repo-init-context/references/one-shot-prompt.md
+  - .agents/skills/writing-style-explainer
+  - .agents/skills/writing-style-explainer/SKILL.md
+  - .agents/skills/writing-style-explainer/assets/writing-style.json
+  - .claude/skills/gh-bulk-repo-edit
+  - .claude/skills/gh-bulk-repo-edit/SKILL.md
+  - .claude/skills/gh-bulk-repo-edit/references/api-recipes.md
+  - .claude/skills/gh-bulk-repo-edit/references/script-template.sh
+  - .claude/skills/gh-repo-init-context
+  - .claude/skills/gh-repo-init-context/SKILL.md
+  - .claude/skills/gh-repo-init-context/agents/openai.yaml
+  - .claude/skills/gh-repo-init-context/references/AGENTS.template.md
+  - .claude/skills/gh-repo-init-context/references/one-shot-prompt.md
+  deployed_file_hashes:
+    .agents/skills/codex-chat-organizer/SKILL.md: sha256:3bd54521f51277c80a3125f1ece5b288a784cc43c7862f39e1ad94e96d0cbd2c
+    .agents/skills/codex-chat-organizer/agents/openai.yaml: sha256:42a7ff2b9e3cc1d79df2ef0b36ac121795e390fdcf89b2eaa5f114492640e326
+    .agents/skills/codex-chat-organizer/scripts/apply-move-plan.mjs: sha256:239848fe6342785c5b9b36f72c20bc3e56bb48e4357ee750175404f9435d6b1c
+    .agents/skills/codex-chat-organizer/scripts/launch-chat-organizer.sh: sha256:56c984a3477aec09860ef8115daf287be378d1c19049c7aa705f6ba57fa2da2a
+    .agents/skills/codex-chat-organizer/scripts/run-move-helper.sh: sha256:5f1a18b7fbec3ce8cebe21fa9933e336db487fbd3896ec871b37859333ae2c6d
+    .agents/skills/codex-chat-organizer/scripts/test-fixture.mjs: sha256:7c9d8e7579933f2a80d8f56e7556613217dc6fb2d34ba3fab4cfd08374d6aff8
+    .agents/skills/codex-session-blogger/SKILL.md: sha256:bb8cbf198d45c883be0490906c5df8c8d7e35073a642e951150a9e4ce078a781
+    .agents/skills/codex-session-blogger/agents/openai.yaml: sha256:eacd1e58e2ac8c84ef2618710648194f966615bc66a1930603ef6e5f8d9b8c82
+    .agents/skills/gh-bulk-repo-edit/SKILL.md: sha256:bb78624a4b2b5b7b3320c56e1e73db316e64e90936a05d8e5fb37272708cca1f
+    .agents/skills/gh-bulk-repo-edit/references/api-recipes.md: sha256:d64606167a2bee2648f83488de04303eff1446f98170a4dd4faa0e2796a27bd3
+    .agents/skills/gh-bulk-repo-edit/references/script-template.sh: sha256:85eeb89f336909e699bd4a37a0fc48dfd57fbf6c0ff53f13d8909116bdc8d170
+    .agents/skills/gh-repo-init-context/SKILL.md: sha256:c8b8aefbdf44df8667310fb2154ef0882a04b88f1f2d8bb01a2c0cbb77a9d4a0
+    .agents/skills/gh-repo-init-context/agents/openai.yaml: sha256:7d04de89a93eb038074c8853e640515b6c10490f46039ba926970b8038f035ad
+    .agents/skills/gh-repo-init-context/references/AGENTS.template.md: sha256:ef27705e3cce54cb63a6cce5c322904795e7c3dafa0e887fbbddb830f0a85c3d
+    .agents/skills/gh-repo-init-context/references/one-shot-prompt.md: sha256:fabc3373e8467fc9795b94f10986d0c3b5cf7d14f8b7da1d5b101fadb7dc9744
+    .agents/skills/writing-style-explainer/SKILL.md: sha256:f64afd5bc51cfa142b713cf989bcba1ac2d47ea6e8fde0e03f34379f96a9e9df
+    .agents/skills/writing-style-explainer/assets/writing-style.json: sha256:866368c78545c4b10a1bc239c32bdd67ccd377252b7762c26ac0b63cf998ee66
+    .claude/skills/gh-bulk-repo-edit/SKILL.md: sha256:bb78624a4b2b5b7b3320c56e1e73db316e64e90936a05d8e5fb37272708cca1f
+    .claude/skills/gh-bulk-repo-edit/references/api-recipes.md: sha256:d64606167a2bee2648f83488de04303eff1446f98170a4dd4faa0e2796a27bd3
+    .claude/skills/gh-bulk-repo-edit/references/script-template.sh: sha256:85eeb89f336909e699bd4a37a0fc48dfd57fbf6c0ff53f13d8909116bdc8d170
+    .claude/skills/gh-repo-init-context/SKILL.md: sha256:c8b8aefbdf44df8667310fb2154ef0882a04b88f1f2d8bb01a2c0cbb77a9d4a0
+    .claude/skills/gh-repo-init-context/agents/openai.yaml: sha256:7d04de89a93eb038074c8853e640515b6c10490f46039ba926970b8038f035ad
+    .claude/skills/gh-repo-init-context/references/AGENTS.template.md: sha256:ef27705e3cce54cb63a6cce5c322904795e7c3dafa0e887fbbddb830f0a85c3d
+    .claude/skills/gh-repo-init-context/references/one-shot-prompt.md: sha256:fabc3373e8467fc9795b94f10986d0c3b5cf7d14f8b7da1d5b101fadb7dc9744
+  content_hash: sha256:0b560760a2bfcce948615741df8f1ef1a100388bd3f8c86fc147ea8d53123d47
+  skill_subset:
+  - codex-chat-organizer
+  - codex-session-blogger
+  - gh-bulk-repo-edit
+  - gh-repo-init-context
+  - writing-style-explainer

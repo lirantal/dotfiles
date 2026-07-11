@@ -1,0 +1,21 @@
+name: lirantal
+version: 1.0.0
+description: APM project for lirantal
+author: Liran Tal
+targets:
+- agent-skills
+- codex
+- claude
+dependencies:
+  apm:
+  - git: lirantal/skills
+    skills:
+    - codex-chat-organizer
+    - codex-session-blogger
+    - gh-bulk-repo-edit
+    - gh-repo-init-context
+    - writing-style-explainer
+  - lirantal/agent-plugin-guppi-sound-pack
+  mcp: []
+includes: auto
+scripts: {}

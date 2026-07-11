@@ -38,7 +38,7 @@ This repo therefore manages only an explicit allowlist of portable values:
 
 ```text
 .chezmoitemplates/codex-preferences.toml  # safe, portable desired values
-dot_codex/modify_config.toml              # merges them into the live config
+dot_codex/modify_private_config.toml      # merges them into the owner-only live config
 dot_codex/rules/private_default.rules     # portable execution policy
 dot_codex/skills/                         # selected personal skills only
 dot_codex/pets/                           # selected custom pets only
@@ -50,7 +50,7 @@ preferences, portable MCP servers, enabled plugin declarations, and desktop
 preferences. It deliberately excludes `[projects]`, `[marketplaces]`, generated
 MCP helpers, notification binary paths, and per-path host settings.
 
-`modify_config.toml` is a chezmoi modify template. Chezmoi passes the existing
+`modify_private_config.toml` is a private chezmoi modify template. Chezmoi passes the existing
 host file through `.chezmoi.stdin`; the template parses both TOML documents,
 deep-merges the portable preferences over the host configuration, and writes the
 result back. Unknown host keys are preserved but never copied into the Git
@@ -67,7 +67,7 @@ repository:
 {{- $merged | toToml -}}
 ```
 
-The source file must be named `modify_config.toml`, without a `.tmpl` suffix.
+The source file must be named `modify_private_config.toml`, without a `.tmpl` suffix.
 The `chezmoi:modify-template` marker enables template evaluation. `toToml`
 normalizes formatting and does not preserve comments, so semantic comparison is
 more meaningful than textual formatting when reviewing the first application.

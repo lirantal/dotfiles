@@ -5,3 +5,11 @@ source "$ZSH_CONFIG_DIR/aliases.zsh"
 source "$ZSH_CONFIG_DIR/functions.zsh"
 source "$ZSH_CONFIG_DIR/completions.zsh"
 source "$ZSH_CONFIG_DIR/tools.zsh"
+
+# pnpm
+export PNPM_HOME="/Users/lirantal/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end

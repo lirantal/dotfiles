@@ -1,0 +1,54 @@
+# Allow routine read-only GitHub CLI inspection to run outside the macOS
+# sandbox so gh can use both the system Keychain and GitHub network access.
+
+prefix_rule(
+    pattern = ["gh", "auth", "status"],
+    decision = "allow",
+    justification = "GitHub authentication status requires macOS Keychain and GitHub network access",
+    match = [
+        "gh auth status",
+        "gh auth status --active --hostname github.com",
+        "gh auth status --json hosts",
+    ],
+    not_match = [
+        "gh auth login",
+        "gh auth logout",
+        "gh auth token",
+    ],
+)
+
+prefix_rule(
+    pattern = ["gh", "run", ["list", "view", "watch"]],
+    decision = "allow",
+    justification = "Read-only GitHub Actions inspection requires authenticated network access",
+    match = [
+        "gh run list",
+        "gh run view 123456789",
+        "gh run view 123456789 --log",
+        "gh run watch 123456789",
+    ],
+    not_match = [
+        "gh run cancel 123456789",
+        "gh run delete 123456789",
+        "gh run rerun 123456789",
+    ],
+)
+
+prefix_rule(
+    pattern = ["gh", "pr", ["list", "view", "checks", "diff", "status"]],
+    decision = "allow",
+    justification = "Read-only pull request inspection requires authenticated network access",
+    match = [
+        "gh pr list",
+        "gh pr view 123",
+        "gh pr checks 123",
+        "gh pr diff 123",
+        "gh pr status",
+    ],
+    not_match = [
+        "gh pr close 123",
+        "gh pr comment 123 --body approved",
+        "gh pr create",
+        "gh pr merge 123",
+    ],
+)

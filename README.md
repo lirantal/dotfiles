@@ -39,6 +39,7 @@ This repo therefore manages only an explicit allowlist of portable values:
 ```text
 .chezmoitemplates/codex-preferences.toml  # safe, portable desired values
 dot_codex/modify_config.toml              # merges them into the live config
+dot_codex/rules/private_default.rules     # portable execution policy
 dot_codex/skills/                         # selected personal skills only
 dot_codex/pets/                           # selected custom pets only
 .chezmoiignore                            # credentials/runtime-data guardrails
@@ -98,6 +99,38 @@ skills or pets parent directories. Codex owns system skills and generated
 entries alongside personal ones. Marketplace plugin identities and enabled
 flags belong in the preferences template; downloaded plugin installations under
 `~/.codex/plugins` remain ignored and reproducible.
+
+### Codex Execution Policy
+
+`~/.codex/rules/default.rules` is safe to manage as a complete file because it
+contains intentional policy without credentials, host paths, or generated
+state. Chezmoi's `private_` source attribute preserves owner-only target
+permissions. The current rules allow outside-sandbox execution only for
+routine, read-only GitHub inspection:
+
+- `gh auth status`
+- `gh run list`, `view`, and `watch`
+- `gh pr list`, `view`, `checks`, `diff`, and `status`
+
+Mutating commands such as `gh run rerun`, `gh pr create`, and `gh pr merge`
+remain unmatched and therefore continue through the normal approval and
+escalation path.
+
+After changing the live rules file, validate representative allowed and
+unmatched commands before re-adding it:
+
+```sh
+codex execpolicy check --pretty \
+  --rules ~/.codex/rules/default.rules gh pr checks 123
+codex execpolicy check --pretty \
+  --rules ~/.codex/rules/default.rules gh pr merge 123
+chezmoi add ~/.codex/rules/default.rules
+chezmoi diff ~/.codex/rules/default.rules
+```
+
+The first policy check should return `"decision": "allow"`; the second should
+return an empty `matchedRules` list. Review the chezmoi diff before committing
+because an overly broad prefix rule can silently widen future host execution.
 
 ### Reusing This Pattern for Other Mixed or Sensitive Files
 

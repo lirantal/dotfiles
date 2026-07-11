@@ -1,3 +1,25 @@
 README.md
 Brewfile
 scripts/**
+
+# Codex credentials and user/session data.
+.codex/auth.json
+.codex/sessions/**
+.codex/archived_sessions/**
+.codex/attachments/**
+.codex/generated_images/**
+.codex/visualizations/**
+
+# Codex runtime, caches, generated state, and machine-local installations.
+.codex/worktrees/**
+.codex/plugins/**
+.codex/cache/**
+.codex/log/**
+.codex/shell_snapshots/**
+.codex/backups/**
+.codex/*.sqlite
+.codex/*.sqlite-*
+.codex/*_cache.json
+.codex/history.jsonl
+.codex/session_index.jsonl
+.codex/installation_id

@@ -1,0 +1,8 @@
+{{- /* chezmoi:modify-template */ -}}
+{{- $current := dict -}}
+{{- if .chezmoi.stdin -}}
+{{-   $current = fromToml .chezmoi.stdin -}}
+{{- end -}}
+{{- $desired := includeTemplate "codex-preferences.toml" . | fromToml -}}
+{{- $merged := mergeOverwrite (deepCopy $current) $desired -}}
+{{- $merged | toToml -}}

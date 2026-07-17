@@ -19,8 +19,17 @@ brew "openjdk@17"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 brew "zsh-completions"
+brew "jq"
+
+# Install Snyk
+tap "snyk/tap"
+brew "snyk/tap/snyk"
+
+cask "1password-cli"
 
 # Terminal and fonts.
 cask "ghostty"
 cask "font-fira-code-nerd-font"
+
+# Open links in distinct browser profiles
 cask "finicky"

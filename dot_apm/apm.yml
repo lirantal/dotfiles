@@ -16,6 +16,7 @@ dependencies:
     - gh-repo-init-context
     - writing-style-explainer
   - lirantal/agent-plugin-guppi-sound-pack
+  - obra/superpowers
   mcp: []
 includes: auto
 scripts: {}

@@ -33,3 +33,7 @@ cask "font-fira-code-nerd-font"
 
 # Open links in distinct browser profiles
 cask "finicky"
+
+# Tiling window manager
+tap "nikitabobko/tap"
+cask "nikitabobko/tap/aerospace"

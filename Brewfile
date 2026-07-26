@@ -37,3 +37,5 @@ cask "finicky"
 # Tiling window manager
 tap "nikitabobko/tap"
 cask "nikitabobko/tap/aerospace"
+tap "FelixKratz/formulae"
+brew "borders"

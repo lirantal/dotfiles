@@ -1,0 +1,42 @@
+#!/bin/bash
+# Send a newly detected browser window to the least-used workspace in its pool.
+# Usage: aerospace-route-browser-window <bundle-id> <workspace> [workspace...]
+
+set -u
+
+bundle_id="$1"
+shift
+workspaces=("$@")
+source_window_id="${AEROSPACE_WINDOW_ID:-}"
+
+[ -n "$source_window_id" ] || exit 0
+[ "${#workspaces[@]}" -gt 0 ] || exit 0
+
+# Allow the browser to finish creating the new native window first.
+sleep 0.15
+
+counts=()
+for ((index = 0; index < ${#workspaces[@]}; index++)); do
+    counts[$index]=0
+done
+
+# Count existing windows only; the detected window is excluded before assigning it.
+while IFS=$'\t' read -r window_id workspace; do
+    [ "$window_id" = "$source_window_id" ] && continue
+
+    for ((index = 0; index < ${#workspaces[@]}; index++)); do
+        if [ "$workspace" = "${workspaces[$index]}" ]; then
+            counts[$index]=$((counts[$index] + 1))
+        fi
+    done
+done < <(aerospace list-windows --monitor all --app-bundle-id "$bundle_id" --format '%{window-id}%{tab}%{workspace}')
+
+# Pick the first least-used workspace. Ties preserve the requested order.
+target_index=0
+for ((index = 1; index < ${#workspaces[@]}; index++)); do
+    if [ "${counts[$index]}" -lt "${counts[$target_index]}" ]; then
+        target_index=$index
+    fi
+done
+
+aerospace move-node-to-workspace --window-id "$source_window_id" "${workspaces[$target_index]}"

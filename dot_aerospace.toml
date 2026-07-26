@@ -8,16 +8,18 @@ config-version = 2
 
 # You can use it to add commands that run after AeroSpace startup.
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
+after-startup-command = [
+    'exec-and-forget borders active_color=0xffff00ff inactive_color=0xff313244 width=7.5 style=round',
+]
 
 # Route supported apps to their designated workspaces.
 on-window-detected = [
     # Dedicated application workspaces.
     { if = 'test %{app-bundle-id} = com.tinyspeck.slackmacgap', run = 'move-node-to-workspace S' },
-    { if = 'test %{app-bundle-id} = com.google.Chrome', run = 'move-node-to-workspace W' },
+    { if = 'test %{app-bundle-id} = com.google.Chrome', run = 'exec-and-forget /Users/lirantal/.local/bin/aerospace-route-browser-window com.google.Chrome W E R' },
     { if = 'test %{app-bundle-id} = com.anthropic.claudefordesktop || test %{app-bundle-id} = com.microsoft.VSCode', run = 'move-node-to-workspace C' },
     { if = 'test %{app-bundle-id} = com.openai.codex', run = 'move-node-to-workspace O' },
-    { if = 'test %{app-bundle-id} = com.vivaldi.Vivaldi', run = 'move-node-to-workspace V' },
+    { if = 'test %{app-bundle-id} = com.vivaldi.Vivaldi', run = 'exec-and-forget /Users/lirantal/.local/bin/aerospace-route-browser-window com.vivaldi.Vivaldi V B N' },
 ]
 
 # Start AeroSpace at login
@@ -98,6 +100,8 @@ V = ['DELL P2720D', 'main']
 1 = ['DELL P2720D', 'main']
 W = ['DELL P2720D', 'main']
 C = ['DELL P2720D', 'main']
+B = ['DELL P2720D', 'main']
+N = ['DELL P2720D', 'main']
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes

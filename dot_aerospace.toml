@@ -1,5 +1,5 @@
 # Place a copy of this config to ~/.aerospace.toml
-# After that, you can edit ~/.aerospace.toml to your liking
+#l- After that, you can edit ~/.aerospace.toml to your liking
 
 # Config version for compatibility and deprecations
 # See: https://nikitabobko.github.io/AeroSpace/guide#config-version
@@ -10,8 +10,18 @@ config-version = 2
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = []
 
+# Route supported apps to their designated workspaces.
+on-window-detected = [
+    # Dedicated application workspaces.
+    { if = 'test %{app-bundle-id} = com.tinyspeck.slackmacgap', run = 'move-node-to-workspace S' },
+    { if = 'test %{app-bundle-id} = com.google.Chrome', run = 'move-node-to-workspace W' },
+    { if = 'test %{app-bundle-id} = com.anthropic.claudefordesktop || test %{app-bundle-id} = com.microsoft.VSCode', run = 'move-node-to-workspace C' },
+    { if = 'test %{app-bundle-id} = com.openai.codex', run = 'move-node-to-workspace O' },
+    { if = 'test %{app-bundle-id} = com.vivaldi.Vivaldi', run = 'move-node-to-workspace V' },
+]
+
 # Start AeroSpace at login
-start-at-login = false
+start-at-login = true
 
 # Automatically reload the config when the config file is saved
 # After setting this to true, reload once manually to start the auto-reloading
@@ -73,12 +83,21 @@ key-mapping.preset = 'qwerty'
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
-gaps.inner.horizontal = 0
-gaps.inner.vertical =   0
-gaps.outer.left =       0
-gaps.outer.bottom =     0
-gaps.outer.top =        0
-gaps.outer.right =      0
+gaps.inner.horizontal = 5
+gaps.inner.vertical =   5
+gaps.outer.left =       5
+gaps.outer.bottom =     5
+gaps.outer.top =        5
+gaps.outer.right =      5
+
+[workspace-to-monitor-force-assignment]
+# Keep selected workspaces on their preferred displays when available.
+O = ['DELL P2720D', 'main']
+S = ['Built-in Retina Display', 'main']
+V = ['DELL P2720D', 'main']
+1 = ['DELL P2720D', 'main']
+W = ['DELL P2720D', 'main']
+C = ['DELL P2720D', 'main']
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -177,7 +196,7 @@ gaps.outer.right =      0
     alt-shift-c = 'move-node-to-workspace C'
     alt-shift-d = 'move-node-to-workspace D'
     alt-shift-e = 'move-node-to-workspace E'
-    alt-shift-f = 'move-node-to-workspace F'
+    #alt-shift-f = 'move-node-to-workspace F'
     alt-shift-g = 'move-node-to-workspace G'
     alt-shift-i = 'move-node-to-workspace I'
     alt-shift-m = 'move-node-to-workspace M'
@@ -194,6 +213,8 @@ gaps.outer.right =      0
     alt-shift-x = 'move-node-to-workspace X'
     alt-shift-y = 'move-node-to-workspace Y'
     alt-shift-z = 'move-node-to-workspace Z'
+
+    alt-shift-f = 'fullscreen'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'

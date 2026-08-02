@@ -17,8 +17,9 @@ on-window-detected = [
     # Dedicated application workspaces.
     { if = 'test %{app-bundle-id} = com.tinyspeck.slackmacgap', run = 'move-node-to-workspace S' },
     { if = 'test %{app-bundle-id} = com.google.Chrome', run = 'exec-and-forget /Users/lirantal/.local/bin/aerospace-route-browser-window com.google.Chrome W E R' },
-    { if = 'test %{app-bundle-id} = com.anthropic.claudefordesktop || test %{app-bundle-id} = com.microsoft.VSCode', run = 'move-node-to-workspace C' },
-    { if = 'test %{app-bundle-id} = com.openai.codex', run = 'move-node-to-workspace O' },
+    { if = 'test %{app-bundle-id} = com.anthropic.claudefordesktop || test %{app-bundle-id} = md.obsidian', run = 'move-node-to-workspace C' },
+    { if = 'test %{app-bundle-id} = com.microsoft.VSCode', run = 'move-node-to-workspace D' },
+    { if = 'test %{app-bundle-id} = com.openai.codex', run = 'move-node-to-workspace G' },
     { if = 'test %{app-bundle-id} = com.vivaldi.Vivaldi', run = 'exec-and-forget /Users/lirantal/.local/bin/aerospace-route-browser-window com.vivaldi.Vivaldi V B N' },
 ]
 
@@ -62,7 +63,7 @@ automatically-unhide-macos-hidden-apps = false
 # even when they are invisible.
 # This config option is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B",
+persistent-workspaces = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B",
                          "C", "D", "E", "F", "G", "I", "M", "N", "O", "P", "Q",
                          "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
@@ -93,15 +94,40 @@ gaps.outer.top =        5
 gaps.outer.right =      5
 
 [workspace-to-monitor-force-assignment]
-# Keep selected workspaces on their preferred displays when available.
-O = ['DELL P2720D', 'main']
-S = ['Built-in Retina Display', 'main']
-V = ['DELL P2720D', 'main']
+# Use the DELL for every available workspace when it is connected.
+# Workspace 0 and Slack's S are deliberately built-in-first.
+0 = ['Built-in Retina Display', 'main']
 1 = ['DELL P2720D', 'main']
-W = ['DELL P2720D', 'main']
-C = ['DELL P2720D', 'main']
+2 = ['DELL P2720D', 'main']
+3 = ['DELL P2720D', 'main']
+4 = ['DELL P2720D', 'main']
+5 = ['DELL P2720D', 'main']
+6 = ['DELL P2720D', 'main']
+7 = ['DELL P2720D', 'main']
+8 = ['DELL P2720D', 'main']
+9 = ['DELL P2720D', 'main']
+A = ['DELL P2720D', 'main']
 B = ['DELL P2720D', 'main']
+C = ['DELL P2720D', 'main']
+D = ['DELL P2720D', 'main']
+E = ['DELL P2720D', 'main']
+F = ['DELL P2720D', 'main']
+G = ['DELL P2720D', 'main']
+I = ['DELL P2720D', 'main']
+M = ['DELL P2720D', 'main']
 N = ['DELL P2720D', 'main']
+O = ['DELL P2720D', 'main']
+P = ['DELL P2720D', 'main']
+Q = ['DELL P2720D', 'main']
+R = ['DELL P2720D', 'main']
+S = ['Built-in Retina Display', 'main']
+T = ['DELL P2720D', 'main']
+U = ['DELL P2720D', 'main']
+V = ['DELL P2720D', 'main']
+W = ['DELL P2720D', 'main']
+X = ['DELL P2720D', 'main']
+Y = ['DELL P2720D', 'main']
+Z = ['DELL P2720D', 'main']
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -153,6 +179,9 @@ N = ['DELL P2720D', 'main']
     alt-equal = 'resize smart +50'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
+    alt-leftSquareBracket = 'workspace --wrap-around prev'
+    alt-rightSquareBracket = 'workspace --wrap-around next'
+    alt-0 = 'workspace 0'
     alt-1 = 'workspace 1'
     alt-2 = 'workspace 2'
     alt-3 = 'workspace 3'
@@ -186,6 +215,7 @@ N = ['DELL P2720D', 'main']
     alt-z = 'workspace Z'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
+    alt-shift-0 = 'move-node-to-workspace 0'
     alt-shift-1 = 'move-node-to-workspace 1'
     alt-shift-2 = 'move-node-to-workspace 2'
     alt-shift-3 = 'move-node-to-workspace 3'

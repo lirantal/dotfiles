@@ -1,0 +1,243 @@
+approval_policy = "on-request"
+approvals_reviewer = "auto_review"
+model = "gpt-5.6-terra"
+model_reasoning_effort = "high"
+notify = ["/Users/lirantal/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+sandbox_mode = "workspace-write"
+service_tier = "default"
+
+[desktop]
+  ambient-suggestions-enabled = true
+  avatar-overlay-mascot-width-px = 80
+  conversationDetailMode = "STEPS_COMMANDS"
+  dock-icon-preference = "codex-system"
+  enabled-reasoning-efforts = ["low", "medium", "high", "xhigh"]
+  followUpQueueMode = "queue"
+  git-branch-prefix = "work/"
+  git-create-pull-request-as-draft = false
+  git-pull-request-merge-method = "merge"
+  git-show-sidebar-pr-icons = true
+  hotkey-window-projectless-default-enabled = false
+  notifications-turn-mode = "always"
+  preventSleepWhileRunning = true
+  selected-avatar-id = "custom:grogu-kid"
+  show-context-window-usage = true
+  worktree-keep-count = 10
+  [desktop.appearanceDarkChromeTheme]
+    accent = "#339cff"
+    contrast = 60
+    ink = "#ffffff"
+    opaqueWindows = true
+    surface = "#181818"
+    [desktop.appearanceDarkChromeTheme.fonts]
+    [desktop.appearanceDarkChromeTheme.semanticColors]
+      diffAdded = "#40c977"
+      diffRemoved = "#fa423e"
+      skill = "#ad7bf9"
+  [desktop.appearanceLightChromeTheme]
+    accent = "#339cff"
+    contrast = 45
+    ink = "#1a1c1f"
+    opaqueWindows = true
+    surface = "#ffffff"
+    [desktop.appearanceLightChromeTheme.fonts]
+    [desktop.appearanceLightChromeTheme.semanticColors]
+      diffAdded = "#00a240"
+      diffRemoved = "#ba2623"
+      skill = "#924ff7"
+  [desktop.open-in-target-preferences]
+    global = "vscode"
+    [desktop.open-in-target-preferences.perPath]
+      "/home/node/gh-cp" = "vscode"
+      "/home/node/slidev-theme-snyk" = "vscode"
+
+[features]
+  default_mode_request_user_input = true
+  js_repl = false
+
+[hooks]
+  [hooks.state]
+    [hooks.state."/Users/lirantal/.codex/hooks.json:permission_request:0:0"]
+      trusted_hash = "sha256:958ff2868c9a29a308fa0c0ac94503424180c3d109fcad91e8c16a3764e7cd31"
+    [hooks.state."/Users/lirantal/.codex/hooks.json:pre_compact:0:0"]
+      trusted_hash = "sha256:759e9b667f479040d69a6ead89501791c137709b024821809dbafae403cdf394"
+    [hooks.state."/Users/lirantal/.codex/hooks.json:session_start:0:0"]
+      trusted_hash = "sha256:5325af44fd5eed27c7454ed031e28b09af1feb4c5f4b98c1102de79f8e9bc123"
+    [hooks.state."/Users/lirantal/.codex/hooks.json:stop:0:0"]
+      trusted_hash = "sha256:66eb0691d60f4723faba3cac10a18361cce0ba91bef0594f19cda038d9269ab2"
+    [hooks.state."/Users/lirantal/.codex/hooks.json:user_prompt_submit:0:0"]
+      trusted_hash = "sha256:9b3f92c5a0769797aaa94de4ef0893e8bc1383639a3f99cba926c0e5f64e1c86"
+
+[marketplaces]
+
+[marketplaces.openai-bundled]
+last_updated = "2026-08-01T08:31:05Z"
+source_type = "local"
+source = "/Users/lirantal/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-08-01T21:23:24Z"
+source_type = "local"
+source = "/Users/lirantal/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[mcp_servers]
+
+[mcp_servers.computer-use]
+command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
+args = ["mcp"]
+cwd = "."
+enabled = false
+
+[mcp_servers.node_repl]
+args = []
+command = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl"
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/lirantal/.codex"
+CODEX_HOME = "/Users/lirantal/.codex"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "028a14b6eaa6d98dac2aae00764345ab9f244801ed8493d42b9af3be5575006e,f204d340535055781952b10ed396de20b842f00a19e430852f7e121ad1ce91f6"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
+NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.727.51351"
+CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
+
+[mcp_servers.snyk-security]
+command = "npx"
+args = ["-y", "snyk@latest", "mcp", "-t", "stdio"]
+
+[mcp_servers.openaiDeveloperDocs]
+url = "https://developers.openai.com/mcp"
+
+[plugins]
+  [plugins."documents@openai-primary-runtime"]
+    enabled = true
+  [plugins."pdf@openai-primary-runtime"]
+    enabled = true
+  [plugins."presentations@openai-primary-runtime"]
+    enabled = true
+  [plugins."sites@openai-bundled"]
+    enabled = true
+  [plugins."spreadsheets@openai-primary-runtime"]
+    enabled = true
+  [plugins."template-creator@openai-primary-runtime"]
+    enabled = true
+  [plugins."visualize@openai-bundled"]
+    enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[projects]
+  [projects."/Users/lirantal/Documents/Codex/2026-06-14/gh-bulk-repo-edit-users-lirantal"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-14/gh-bulk-repo-edit-users-lirantal-2"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-14/go-through-my-open-pull-requests"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-14/go-through-my-open-pull-requests-2"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-18/files-mentioned-by-the-user-codex"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-18/i-have-this-pdf-file-for"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-19/microsoft-apm-https-github-com-microsoft"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-20/lik"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-22/go"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-23/10-15-1023-1537"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-23/10-15-1023-1537-2"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-23/10-15-1023-1537-3"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-23/10-15-1023-1537-artistic-yishai"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-23/10-15-1023-1537-artistic-yishai-2"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-24/here"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-24/ima"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-24/what"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-25/shel"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-27/c"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-27/i-have-this-writing-style-explainer"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-28/in-a"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-30/fe"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-30/here"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-30/hey"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-30/hey-codex-can-you-change-your"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-06-30/is-th"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-07-01/in"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-07-09/does"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-07-09/hmmm-it-looks-like-this-codex"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-07-10/hatch-pet-users-lirantal-codex-skills"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-07-10/i-want-to"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-07-10/s"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-07-10/what"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-07-10/what-sort-of"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-07-11/from-a-different-chat-i-ll"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-07-11/from-a-different-chat-i-ll-2"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-07-11/i-h"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Codex/2026-07-12/hey"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/GH"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/Terminal setup"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/Documents/💡 Projects ideation"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/projects/repos/boxdown"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/projects/repos/gh-cp"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/projects/repos/mcp-server-nodejs-api-docs"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/projects/repos/skills"]
+    trust_level = "trusted"
+  [projects."/Users/lirantal/projects/repos/snyk-rsac2026-telnet-23"]
+    trust_level = "trusted"
+
+[projects."/Users/lirantal/Documents/Codex/2026-07-17/can-you-look-up-openai"]
+trust_level = "trusted"
+
+[projects."/Users/lirantal/Documents/Codex hooks"]
+trust_level = "trusted"
+
+[projects."/Users/lirantal/.codex/.chatgpt-projects/g-p-6a646b1e4fec819183affffbe53a1642"]
+trust_level = "trusted"
+
+[shell_environment_policy.set]
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "028a14b6eaa6d98dac2aae00764345ab9f244801ed8493d42b9af3be5575006e,f204d340535055781952b10ed396de20b842f00a19e430852f7e121ad1ce91f6"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/lirantal/.codex"

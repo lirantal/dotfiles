@@ -25,6 +25,7 @@ macos-option-as-alt = true
 mouse-hide-while-typing = true
 
 confirm-close-surface = false
+quit-after-last-window-closed = true
 window-decoration = true 
 window-padding-x = 10
 window-padding-y = 10
@@ -34,7 +35,7 @@ auto-update = check
 auto-update-channel = stable
 
 # extras
-shell-integration-features = no-cursor
+shell-integration-features = no-cursor,ssh-env,ssh-terminfo
 copy-on-select = clipboard
 # cmd or alt c copy (not vim yank)
 

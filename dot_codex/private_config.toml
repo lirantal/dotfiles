@@ -2,6 +2,9 @@ approval_policy = "on-request"
 approvals_reviewer = "auto_review"
 model = "gpt-5.6-terra"
 model_reasoning_effort = "high"
+developer_instructions = """
+When delegation is appropriate, prefer the luna_delegate custom agent for a single, concrete, bounded task with a clear expected outcome. Do not delegate trivial work or tasks that require broad architectural judgment.
+"""
 notify = ["/Users/lirantal/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 sandbox_mode = "workspace-write"
 service_tier = "default"
@@ -54,6 +57,10 @@ service_tier = "default"
 [features]
   default_mode_request_user_input = true
   js_repl = false
+
+[agents.luna_delegate]
+description = "Use for a single, concrete, bounded delegation with a clear expected outcome."
+config_file = "agents/luna_delegate.toml"
 
 [hooks]
   [hooks.state]
@@ -235,6 +242,9 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [projects."/Users/lirantal/.codex/.chatgpt-projects/g-p-6a646b1e4fec819183affffbe53a1642"]
+trust_level = "trusted"
+
+[projects."/Users/lirantal/Documents/Codex/2026-08-02/hey"]
 trust_level = "trusted"
 
 [shell_environment_policy.set]

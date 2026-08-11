@@ -12,15 +12,15 @@ after-startup-command = [
     'exec-and-forget borders active_color=0xffff00ff inactive_color=0xff313244 width=7.5 style=round',
 ]
 
-# Route supported apps to their designated workspaces.
+# Route apps to a small, fixed set of role-based workspaces.
 on-window-detected = [
-    # Dedicated application workspaces.
     { if = 'test %{app-bundle-id} = com.tinyspeck.slackmacgap', run = 'move-node-to-workspace S' },
-    { if = 'test %{app-bundle-id} = com.google.Chrome', run = 'exec-and-forget /Users/lirantal/.local/bin/aerospace-route-browser-window com.google.Chrome W E R' },
-    { if = 'test %{app-bundle-id} = com.anthropic.claudefordesktop || test %{app-bundle-id} = md.obsidian', run = 'move-node-to-workspace C' },
-    { if = 'test %{app-bundle-id} = com.microsoft.VSCode', run = 'move-node-to-workspace D' },
-    { if = 'test %{app-bundle-id} = com.openai.codex', run = 'move-node-to-workspace G' },
-    { if = 'test %{app-bundle-id} = com.vivaldi.Vivaldi', run = 'exec-and-forget /Users/lirantal/.local/bin/aerospace-route-browser-window com.vivaldi.Vivaldi V B N' },
+    { if = 'test %{app-bundle-id} = com.mitchellh.ghostty || test %{app-bundle-id} = com.apple.finder', run = 'move-node-to-workspace 1' },
+    { if = 'test %{app-bundle-id} = com.google.Chrome', run = 'move-node-to-workspace 2' },
+    { if = 'test %{app-bundle-id} = com.anthropic.claudefordesktop || test %{app-bundle-id} = md.obsidian', run = 'move-node-to-workspace 3' },
+    { if = 'test %{app-bundle-id} = com.vivaldi.Vivaldi', run = 'move-node-to-workspace 4' },
+    { if = 'test %{app-bundle-id} = com.openai.codex', run = 'move-node-to-workspace 5' },
+    { if = 'test %{app-bundle-id} = com.todesktop.230313mzl4w4u92', run = 'move-node-to-workspace 6' },
 ]
 
 # Start AeroSpace at login
@@ -63,9 +63,7 @@ automatically-unhide-macos-hidden-apps = false
 # even when they are invisible.
 # This config option is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B",
-                         "C", "D", "E", "F", "G", "I", "M", "N", "O", "P", "Q",
-                         "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+persistent-workspaces = ["0", "1", "2", "3", "4", "5", "6", "9", "S"]
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -94,40 +92,11 @@ gaps.outer.top =        5
 gaps.outer.right =      5
 
 [workspace-to-monitor-force-assignment]
-# Use whichever secondary display is connected for every available workspace.
-# Workspace 0 and Slack's S are deliberately built-in-first.
-0 = ['Built-in Retina Display', 'main']
-1 = ['secondary', 'main']
-2 = ['secondary', 'main']
-3 = ['secondary', 'main']
-4 = ['secondary', 'main']
-5 = ['secondary', 'main']
-6 = ['secondary', 'main']
-7 = ['secondary', 'main']
-8 = ['secondary', 'main']
+# Workspace 0 is a main-display scratchpad; 9 is a secondary-display scratchpad.
+# Workspaces 1-6 stay movable with Option+P / Option+O.
+0 = 'main'
 9 = ['secondary', 'main']
-A = ['secondary', 'main']
-B = ['secondary', 'main']
-C = ['secondary', 'main']
-D = ['secondary', 'main']
-E = ['secondary', 'main']
-F = ['secondary', 'main']
-G = ['secondary', 'main']
-I = ['secondary', 'main']
-M = ['secondary', 'main']
-N = ['secondary', 'main']
-O = ['secondary', 'main']
-P = ['secondary', 'main']
-Q = ['secondary', 'main']
-R = ['secondary', 'main']
 S = ['Built-in Retina Display', 'main']
-T = ['secondary', 'main']
-U = ['secondary', 'main']
-V = ['secondary', 'main']
-W = ['secondary', 'main']
-X = ['secondary', 'main']
-Y = ['secondary', 'main']
-Z = ['secondary', 'main']
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -181,6 +150,8 @@ Z = ['secondary', 'main']
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
     alt-leftSquareBracket = 'workspace --wrap-around prev'
     alt-rightSquareBracket = 'workspace --wrap-around next'
+    alt-p = 'move-workspace-to-monitor main'
+    alt-o = 'move-workspace-to-monitor secondary'
     alt-0 = 'workspace 0'
     alt-1 = 'workspace 1'
     alt-2 = 'workspace 2'
@@ -188,31 +159,8 @@ Z = ['secondary', 'main']
     alt-4 = 'workspace 4'
     alt-5 = 'workspace 5'
     alt-6 = 'workspace 6'
-    alt-7 = 'workspace 7'
-    alt-8 = 'workspace 8'
     alt-9 = 'workspace 9'
-    alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
-    alt-b = 'workspace B'
-    alt-c = 'workspace C'
-    alt-d = 'workspace D'
-    alt-e = 'workspace E'
-    alt-f = 'workspace F'
-    alt-g = 'workspace G'
-    alt-i = 'workspace I'
-    alt-m = 'workspace M'
-    alt-n = 'workspace N'
-    alt-o = 'workspace O'
-    alt-p = 'workspace P'
-    alt-q = 'workspace Q'
-    alt-r = 'workspace R'
     alt-s = 'workspace S'
-    alt-t = 'workspace T'
-    alt-u = 'workspace U'
-    alt-v = 'workspace V'
-    alt-w = 'workspace W'
-    alt-x = 'workspace X'
-    alt-y = 'workspace Y'
-    alt-z = 'workspace Z'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-0 = 'move-node-to-workspace 0'
@@ -222,31 +170,8 @@ Z = ['secondary', 'main']
     alt-shift-4 = 'move-node-to-workspace 4'
     alt-shift-5 = 'move-node-to-workspace 5'
     alt-shift-6 = 'move-node-to-workspace 6'
-    alt-shift-7 = 'move-node-to-workspace 7'
-    alt-shift-8 = 'move-node-to-workspace 8'
     alt-shift-9 = 'move-node-to-workspace 9'
-    alt-shift-a = 'move-node-to-workspace A'
-    alt-shift-b = 'move-node-to-workspace B'
-    alt-shift-c = 'move-node-to-workspace C'
-    alt-shift-d = 'move-node-to-workspace D'
-    alt-shift-e = 'move-node-to-workspace E'
-    #alt-shift-f = 'move-node-to-workspace F'
-    alt-shift-g = 'move-node-to-workspace G'
-    alt-shift-i = 'move-node-to-workspace I'
-    alt-shift-m = 'move-node-to-workspace M'
-    alt-shift-n = 'move-node-to-workspace N'
-    alt-shift-o = 'move-node-to-workspace O'
-    alt-shift-p = 'move-node-to-workspace P'
-    alt-shift-q = 'move-node-to-workspace Q'
-    alt-shift-r = 'move-node-to-workspace R'
     alt-shift-s = 'move-node-to-workspace S'
-    alt-shift-t = 'move-node-to-workspace T'
-    alt-shift-u = 'move-node-to-workspace U'
-    alt-shift-v = 'move-node-to-workspace V'
-    alt-shift-w = 'move-node-to-workspace W'
-    alt-shift-x = 'move-node-to-workspace X'
-    alt-shift-y = 'move-node-to-workspace Y'
-    alt-shift-z = 'move-node-to-workspace Z'
 
     alt-shift-f = 'fullscreen'
 

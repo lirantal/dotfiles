@@ -132,16 +132,16 @@ S = ['Built-in Retina Display', 'main']
     alt-comma = 'layout accordion horizontal vertical'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-    alt-h = 'focus left'
-    alt-j = 'focus down'
-    alt-k = 'focus up'
-    alt-l = 'focus right'
+    alt-ctrl-left = 'focus left'
+    alt-ctrl-down = 'focus down'
+    alt-ctrl-up = 'focus up'
+    alt-ctrl-right = 'focus right'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move
-    alt-shift-h = 'move left'
-    alt-shift-j = 'move down'
-    alt-shift-k = 'move up'
-    alt-shift-l = 'move right'
+    alt-ctrl-shift-left = 'move left'
+    alt-ctrl-shift-down = 'move down'
+    alt-ctrl-shift-up = 'move up'
+    alt-ctrl-shift-right = 'move right'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#resize
     alt-minus = 'resize smart -50'

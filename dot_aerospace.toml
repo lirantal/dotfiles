@@ -63,7 +63,7 @@ automatically-unhide-macos-hidden-apps = false
 # even when they are invisible.
 # This config option is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = ["0", "1", "2", "3", "4", "5", "6", "9", "S"]
+persistent-workspaces = ["0", "1", "2", "3", "4", "5", "6", "9", "O", "P", "S"]
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -92,11 +92,19 @@ gaps.outer.top =        5
 gaps.outer.right =      5
 
 [workspace-to-monitor-force-assignment]
-# Workspace 0 is a main-display scratchpad; 9 is a secondary-display scratchpad.
-# Workspaces 1-6 stay movable with Option+P / Option+O.
+# Keep the working set on whichever external display is connected.
+# 0/P are main-display scratch spaces; 9/O are secondary-display scratch spaces.
 0 = 'main'
+1 = ['secondary', 'main']
+2 = ['secondary', 'main']
+3 = ['secondary', 'main']
+4 = ['secondary', 'main']
+5 = ['secondary', 'main']
+6 = ['secondary', 'main']
 9 = ['secondary', 'main']
-S = ['Built-in Retina Display', 'main']
+O = ['secondary', 'main']
+P = 'main'
+S = 'main'
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -150,8 +158,6 @@ S = ['Built-in Retina Display', 'main']
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
     alt-leftSquareBracket = 'workspace --wrap-around prev'
     alt-rightSquareBracket = 'workspace --wrap-around next'
-    alt-p = 'move-workspace-to-monitor main'
-    alt-o = 'move-workspace-to-monitor secondary'
     alt-0 = 'workspace 0'
     alt-1 = 'workspace 1'
     alt-2 = 'workspace 2'
@@ -160,6 +166,8 @@ S = ['Built-in Retina Display', 'main']
     alt-5 = 'workspace 5'
     alt-6 = 'workspace 6'
     alt-9 = 'workspace 9'
+    alt-o = 'workspace O'
+    alt-p = 'workspace P'
     alt-s = 'workspace S'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
@@ -171,15 +179,14 @@ S = ['Built-in Retina Display', 'main']
     alt-shift-5 = 'move-node-to-workspace 5'
     alt-shift-6 = 'move-node-to-workspace 6'
     alt-shift-9 = 'move-node-to-workspace 9'
+    alt-shift-o = 'move-node-to-workspace O'
+    alt-shift-p = 'move-node-to-workspace P'
     alt-shift-s = 'move-node-to-workspace S'
 
     alt-shift-f = 'fullscreen'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
-    # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-    alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
-
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-semicolon = 'mode service'
 

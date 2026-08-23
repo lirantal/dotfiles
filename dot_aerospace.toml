@@ -15,7 +15,6 @@ after-startup-command = [
 # Route apps to a small, fixed set of role-based workspaces.
 on-window-detected = [
     { if = 'test %{app-bundle-id} = com.tinyspeck.slackmacgap', run = 'move-node-to-workspace S' },
-    { if = 'test %{app-bundle-id} = com.mitchellh.ghostty || test %{app-bundle-id} = com.apple.finder', run = 'move-node-to-workspace 1' },
     { if = 'test %{app-bundle-id} = com.google.Chrome', run = 'move-node-to-workspace 2' },
     { if = 'test %{app-bundle-id} = com.anthropic.claudefordesktop || test %{app-bundle-id} = md.obsidian', run = 'move-node-to-workspace 3' },
     { if = 'test %{app-bundle-id} = com.vivaldi.Vivaldi', run = 'move-node-to-workspace 4' },
@@ -134,6 +133,10 @@ S = 'main'
     # (like in i3)
     # alt-enter = '''exec-and-forget osascript -e \
     # 'tell application "Terminal" to tell (do script) to activate' '''
+
+    # Launch new terminal/file-browser windows in the currently focused workspace.
+    alt-t = 'exec-and-forget open -na Ghostty'
+    alt-f = '''exec-and-forget osascript -e 'tell application "Finder" to make new Finder window' -e 'tell application "Finder" to activate' '''
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
     alt-slash = 'layout tiles horizontal vertical'

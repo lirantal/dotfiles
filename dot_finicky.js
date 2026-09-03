@@ -41,9 +41,15 @@ export default {
 	"https://claude.ai/*",
 	"https://auth.openai.com/*",
 	"https://github.com/enterprises/snyk/*",
-	"https://snykhome.snyk.io/*"
+	"https://snykhome.snyk.io/*",
+	"https://snyk.aha.io/*",
+	"https://app.vanta.com/",
+	"https://*.teleport.sh/"
       ],
-      browser: "Google Chrome",
+      browser: {
+        name: "Google Chrome",
+        //args: ["--new-window"]
+      }
     },
   ],
 };

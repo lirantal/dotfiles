@@ -1,7 +1,7 @@
 approval_policy = "on-request"
 approvals_reviewer = "auto_review"
-model = "gpt-5.6-terra"
-model_reasoning_effort = "high"
+model = "gpt-5.6-luna"
+model_reasoning_effort = "xhigh"
 developer_instructions = """
 When delegation is appropriate, prefer the luna_delegate custom agent for a single, concrete, bounded task with a clear expected outcome. Do not delegate trivial work or tasks that require broad architectural judgment.
 """
@@ -78,12 +78,10 @@ config_file = "agents/luna_delegate.toml"
 [marketplaces]
 
 [marketplaces.openai-bundled]
-last_updated = "2026-08-01T08:31:05Z"
 source_type = "local"
 source = "/Users/lirantal/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-08-01T21:23:24Z"
 source_type = "local"
 source = "/Users/lirantal/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
@@ -104,15 +102,16 @@ startup_timeout_sec = 120
 NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
 NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
 NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
-NODE_REPL_TRUSTED_CODE_PATHS = "/Users/lirantal/.codex"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/lirantal/.codex:/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
 CODEX_HOME = "/Users/lirantal/.codex"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "028a14b6eaa6d98dac2aae00764345ab9f244801ed8493d42b9af3be5575006e,f204d340535055781952b10ed396de20b842f00a19e430852f7e121ad1ce91f6"
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+BROWSER_USE_TINYSKY_ENABLED = "0"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.727.51351"
+BROWSER_USE_CODEX_APP_VERSION = "26.825.41651"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/lirantal/.codex/plugins/cache/openai-bundled/browser/26.825.41651/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
 CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
 
 [mcp_servers.snyk-security]
@@ -122,14 +121,16 @@ args = ["-y", "snyk@latest", "mcp", "-t", "stdio"]
 [mcp_servers.openaiDeveloperDocs]
 url = "https://developers.openai.com/mcp"
 
+[mcp_servers.cua_repl]
+command = "/Applications/ChatGPT.app/Contents/MacOS/ChatGPT"
+enabled = false
+
 [plugins]
   [plugins."documents@openai-primary-runtime"]
     enabled = true
   [plugins."pdf@openai-primary-runtime"]
     enabled = true
   [plugins."presentations@openai-primary-runtime"]
-    enabled = true
-  [plugins."sites@openai-bundled"]
     enabled = true
   [plugins."spreadsheets@openai-primary-runtime"]
     enabled = true
@@ -139,6 +140,9 @@ url = "https://developers.openai.com/mcp"
     enabled = true
 
 [plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."codex-app-tools@openai-bundled"]
 enabled = true
 
 [projects]
@@ -247,7 +251,11 @@ trust_level = "trusted"
 [projects."/Users/lirantal/Documents/Codex/2026-08-02/hey"]
 trust_level = "trusted"
 
+[projects."/Users/lirantal/Documents/Codex/2026-08-25/hey-ca"]
+trust_level = "trusted"
+
+[projects."/Users/lirantal/Documents/Codex/2026-08-29/you-re-in-a-newly-scaffolded"]
+trust_level = "trusted"
+
 [shell_environment_policy.set]
-BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "028a14b6eaa6d98dac2aae00764345ab9f244801ed8493d42b9af3be5575006e,f204d340535055781952b10ed396de20b842f00a19e430852f7e121ad1ce91f6"
-NODE_REPL_TRUSTED_CODE_PATHS = "/Users/lirantal/.codex"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "8e86beb821b9afc846211798e0113bd4b9e79312dfcd135eb447bdb154f64071"

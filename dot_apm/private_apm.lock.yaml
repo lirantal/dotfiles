@@ -2,6 +2,24 @@ lockfile_version: '1'
 generated_at: '2026-06-27T19:00:46.621591+00:00'
 apm_version: 0.22.0
 dependencies:
+- repo_url: jxnl/dots
+  name: audit-ai-writing
+  host: github.com
+  resolved_commit: 34d197b7e2ede7c57d11b601250b42b8a2ae303a
+  version: unknown
+  virtual_path: agents/skills/audit-ai-writing
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/audit-ai-writing
+  - .claude/skills/audit-ai-writing/SKILL.md
+  - .claude/skills/audit-ai-writing/agents/openai.yaml
+  - .claude/skills/audit-ai-writing/patterns.md
+  deployed_file_hashes:
+    .claude/skills/audit-ai-writing/SKILL.md: sha256:7a2114fdc8bb451f83404645d30dcbc659aa15678866c78fa5317ed64b292d54
+    .claude/skills/audit-ai-writing/agents/openai.yaml: sha256:e7659c0b955455ba99d9035da58a9d9fb286614900fe60445c92bb9698d6a264
+    .claude/skills/audit-ai-writing/patterns.md: sha256:ef7c78b2d96049302c1aa81609ff6a0d991fe95c967b7ed67fafeedab94ae148
+  content_hash: sha256:ce8d4f3dd26d0d64bd354e65ea07c10057ee7e2afb1063f23e3ceaa5e94b04c8
 - repo_url: lirantal/skills
   name: skills
   host: github.com
@@ -951,6 +969,42 @@ deployments:
   - lirantal/skills
   active_owner: lirantal/skills
   content_hash: sha256:866368c78545c4b10a1bc239c32bdd67ccd377252b7762c26ac0b63cf998ee66
+- kind: project-relative
+  target: claude
+  value: .claude/skills/audit-ai-writing
+  runtime: null
+  scope: project
+  owners:
+  - jxnl/dots/agents/skills/audit-ai-writing
+  active_owner: jxnl/dots/agents/skills/audit-ai-writing
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/audit-ai-writing/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - jxnl/dots/agents/skills/audit-ai-writing
+  active_owner: jxnl/dots/agents/skills/audit-ai-writing
+  content_hash: sha256:7a2114fdc8bb451f83404645d30dcbc659aa15678866c78fa5317ed64b292d54
+- kind: project-relative
+  target: claude
+  value: .claude/skills/audit-ai-writing/agents/openai.yaml
+  runtime: null
+  scope: project
+  owners:
+  - jxnl/dots/agents/skills/audit-ai-writing
+  active_owner: jxnl/dots/agents/skills/audit-ai-writing
+  content_hash: sha256:e7659c0b955455ba99d9035da58a9d9fb286614900fe60445c92bb9698d6a264
+- kind: project-relative
+  target: claude
+  value: .claude/skills/audit-ai-writing/patterns.md
+  runtime: null
+  scope: project
+  owners:
+  - jxnl/dots/agents/skills/audit-ai-writing
+  active_owner: jxnl/dots/agents/skills/audit-ai-writing
+  content_hash: sha256:ef7c78b2d96049302c1aa81609ff6a0d991fe95c967b7ed67fafeedab94ae148
 - kind: project-relative
   target: claude
   value: .claude/skills/gh-bulk-repo-edit

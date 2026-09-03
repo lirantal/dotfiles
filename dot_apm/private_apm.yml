@@ -16,6 +16,7 @@ dependencies:
         - gh-repo-init-context
         - writing-style-explainer
     - obra/superpowers
+    - jxnl/dots/agents/skills/audit-ai-writing
   mcp: []
 includes: auto
 scripts: {}

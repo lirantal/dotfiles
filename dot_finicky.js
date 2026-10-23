@@ -44,7 +44,11 @@ export default {
 	"https://snykhome.snyk.io/*",
 	"https://snyk.aha.io/*",
 	"https://app.vanta.com/",
-	"https://*.teleport.sh/"
+	"https://*.teleport.sh/",
+	"https://*.snyk-int*",
+        "https://*.okta.com/*",
+ 	"https://snyk.enterprise.slack.com/*",
+	"https://app.espresa.com/*",
       ],
       browser: {
         name: "Google Chrome",

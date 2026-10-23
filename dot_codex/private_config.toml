@@ -1,6 +1,6 @@
 approval_policy = "on-request"
 approvals_reviewer = "auto_review"
-model = "gpt-5.6-luna"
+model = "gpt-6-luna"
 model_reasoning_effort = "xhigh"
 developer_instructions = """
 When delegation is appropriate, prefer the luna_delegate custom agent for a single, concrete, bounded task with a clear expected outcome. Do not delegate trivial work or tasks that require broad architectural judgment.
@@ -23,7 +23,7 @@ service_tier = "default"
   hotkey-window-projectless-default-enabled = false
   notifications-turn-mode = "always"
   preventSleepWhileRunning = true
-  selected-avatar-id = "custom:grogu-kid"
+  selected-avatar-id = "pet_6abd4c027de88191a27232f28b20efde"
   show-context-window-usage = true
   worktree-keep-count = 10
   [desktop.appearanceDarkChromeTheme]
@@ -87,15 +87,10 @@ source = "/Users/lirantal/.cache/codex-runtimes/codex-primary-runtime/plugins/op
 
 [mcp_servers]
 
-[mcp_servers.computer-use]
-command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
-args = ["mcp"]
-cwd = "."
-enabled = false
-
 [mcp_servers.node_repl]
 args = []
 command = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl"
+env_vars = ["BROWSER_USE_ACCESS_EXECUTOR_ID", "BROWSER_USE_ACCESS_PIPE_PATH", "BROWSER_USE_ACCESS_VERIFYING_IDENTITY"]
 startup_timeout_sec = 120
 
 [mcp_servers.node_repl.env]
@@ -104,15 +99,16 @@ NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_n
 NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
 NODE_REPL_TRUSTED_CODE_PATHS = "/Users/lirantal/.codex:/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
 CODEX_HOME = "/Users/lirantal/.codex"
-BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
-BROWSER_USE_TINYSKY_ENABLED = "0"
-NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
-NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
-NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab,mcpapps"
+BROWSER_USE_TINYSKY_ENABLED = "1"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = ""
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.825.41651"
-NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/lirantal/.codex/plugins/cache/openai-bundled/browser/26.825.41651/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
-CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
+BROWSER_USE_CODEX_APP_VERSION = "26.1016.61520"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/lirantal/.codex/plugins/cache/openai-bundled/browser/26.1016.61520/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+SKY_CUA_SERVICE_PATH = "/Users/lirantal/.codex/computer-use/Codex Computer Use.app"
+CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex"
 
 [mcp_servers.snyk-security]
 command = "npx"
@@ -121,8 +117,10 @@ args = ["-y", "snyk@latest", "mcp", "-t", "stdio"]
 [mcp_servers.openaiDeveloperDocs]
 url = "https://developers.openai.com/mcp"
 
-[mcp_servers.cua_repl]
-command = "/Applications/ChatGPT.app/Contents/MacOS/ChatGPT"
+[mcp_servers.computer-use]
+command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
+args = ["mcp"]
+cwd = "."
 enabled = false
 
 [plugins]
@@ -143,6 +141,15 @@ enabled = false
 enabled = true
 
 [plugins."codex-app-tools@openai-bundled"]
+enabled = true
+
+[plugins."unified-computer-use@openai-bundled"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."code-review@openai-bundled"]
 enabled = true
 
 [projects]
@@ -257,5 +264,18 @@ trust_level = "trusted"
 [projects."/Users/lirantal/Documents/Codex/2026-08-29/you-re-in-a-newly-scaffolded"]
 trust_level = "trusted"
 
+[projects."/Users/lirantal/Documents/Codex/2026-09-04/realtime-voice-chat"]
+trust_level = "trusted"
+
+[projects."/Users/lirantal/Documents/Codex/2026-09-04/i-m"]
+trust_level = "trusted"
+
 [shell_environment_policy.set]
 NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "8e86beb821b9afc846211798e0113bd4b9e79312dfcd135eb447bdb154f64071"
+
+[[skills.config]]
+path = "/Users/lirantal/.codex/skills/hatch-pet/SKILL.md"
+enabled = false
+
+[apps.connector_openai_chatgpt_pets]
+enabled = false

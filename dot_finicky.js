@@ -1,6 +1,7 @@
 // ~/.finicky.js
 export default {
   defaultBrowser: "Vivaldi",
+  //defaultBrowser: "Google Chrome",
   /*
   rewrite: [
     {
@@ -49,6 +50,7 @@ export default {
         "https://*.okta.com/*",
  	"https://snyk.enterprise.slack.com/*",
 	"https://app.espresa.com/*",
+	"https://snyk.slack.com/*",
       ],
       browser: {
         name: "Google Chrome",

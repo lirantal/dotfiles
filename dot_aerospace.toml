@@ -14,6 +14,8 @@ after-startup-command = [
 
 # Route apps to a small, fixed set of role-based workspaces.
 on-window-detected = [
+    # See ~/.config/aerospace/README.md for the Ghostty window placement policy.
+    { if = 'test %{app-bundle-id} = com.mitchellh.ghostty', run = 'exec-and-forget PATH=/opt/homebrew/bin:/usr/local/bin:$PATH python3 "$HOME/.config/aerospace/scripts/ghostty-layout.py"' },
     { if = 'test %{app-bundle-id} = com.tinyspeck.slackmacgap', run = 'move-node-to-workspace S' },
     { if = 'test %{app-bundle-id} = com.google.Chrome', run = 'move-node-to-workspace 2' },
     { if = 'test %{app-bundle-id} = com.anthropic.claudefordesktop || test %{app-bundle-id} = md.obsidian', run = 'move-node-to-workspace 3' },

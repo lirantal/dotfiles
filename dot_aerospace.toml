@@ -14,6 +14,8 @@ after-startup-command = [
 
 # Route apps to a small, fixed set of role-based workspaces.
 on-window-detected = [
+    # Finder: one-third smaller than a half-screen tile on the 2056-point display.
+    { if = 'test %{app-bundle-id} = com.apple.finder', run = 'exec-and-forget aerospace resize --window-id "$AEROSPACE_WINDOW_ID" width 685' },
     # See ~/.config/aerospace/README.md for the Ghostty window placement policy.
     { if = 'test %{app-bundle-id} = com.mitchellh.ghostty', run = 'exec-and-forget PATH=/opt/homebrew/bin:/usr/local/bin:$PATH python3 "$HOME/.config/aerospace/scripts/ghostty-layout.py"' },
     { if = 'test %{app-bundle-id} = com.tinyspeck.slackmacgap', run = 'move-node-to-workspace S' },

@@ -14,6 +14,7 @@ after-startup-command = [
 
 # Route apps to a small, fixed set of role-based workspaces.
 on-window-detected = [
+    { if = 'test %{app-bundle-id} = com.apple.ScreenSharing', run = 'move-node-to-workspace 9' },
     # Finder: one-third smaller than a half-screen tile on the 2056-point display.
     { if = 'test %{app-bundle-id} = com.apple.finder', run = 'exec-and-forget aerospace resize --window-id "$AEROSPACE_WINDOW_ID" width 685' },
     # 1Password: use the same initial tile width as Finder.
